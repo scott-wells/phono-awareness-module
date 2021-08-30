@@ -1,35 +1,50 @@
-body { 
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  main {
-    height: 400px;
-    width: 600px;
-    background: #B2DFDB;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem rgb(0 0 0 / .2);
-    position: relative;
-  }
-  .object-triangle {
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    background: #7B1FA2;
-    width: 6em;
-    height: 6rem;
-    cursor: pointer;
-  }
-  .object-square {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
-    background: #3D5AFE;
-    width: 6rem;
-    height: 6rem;
-    cursor: pointer;
-  }
-  .object-circle {
-    background: #F4511E;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene {
+  height: 480px;
+  width: 720px;
+  background: #b2dfdb;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.2);
+  position: relative;
+}
+.object-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: #7b1fa2;
+  width: 6em;
+  height: 6rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  left: 300px;
+}
+.object-square {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  background: #3d5afe;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  position: absolute;
+  top: 250px;
+  left: 100px;
+}
+.object-circle {
+  background: #f4511e;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 300px;
+  left: 500px;
+}
+.message-div {
+  font-size: 1.8rem;
+  font-weight: 100;
+  text-align: center;
+  padding-top: 1rem;
+}
