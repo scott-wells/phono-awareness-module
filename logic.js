@@ -18,10 +18,10 @@ const makeObjectsClickable = () => {
     };
   
     // Load Question 1.
-    if (!questions[0]) {
+    const loadQuestion1 = () => {
       const question1 = questions.q1;
       const p = document.createElement("P");
-      p.classList.add("message");
+      p.classList.add("message", "animate-text");
       p.innerHTML = `${question1}`;
       addMessage.appendChild(p);
   
@@ -30,9 +30,10 @@ const makeObjectsClickable = () => {
         const message = document.querySelector(".message");
         message.remove();
         const p = document.createElement("P");
-        p.classList.add("message");
+        p.classList.add("message", "animate-text");
         p.innerHTML = `${responses.res1}`;
         addMessage.appendChild(p);
+        setTimeout(loadQuestion2, 5000);
       });
   
       object2.addEventListener("click", (e) => {
@@ -40,9 +41,14 @@ const makeObjectsClickable = () => {
         const message = document.querySelector(".message");
         message.remove();
         const p = document.createElement("P");
-        p.classList.add("message");
+        p.classList.add("message", "animate-text");
         p.innerHTML = `${responses.res4}`;
         addMessage.appendChild(p);
+        setTimeout(function () {
+          const message = document.querySelector(".message");
+          message.remove();
+          loadQuestion1();
+        }, 2000);
       });
   
       object3.addEventListener("click", (e) => {
@@ -50,11 +56,62 @@ const makeObjectsClickable = () => {
         const message = document.querySelector(".message");
         message.remove();
         const p = document.createElement("P");
-        p.classList.add("message");
+        p.classList.add("message", "animate-text");
         p.innerHTML = `${responses.res4}`;
         addMessage.appendChild(p);
+        setTimeout(function () {
+          const message = document.querySelector(".message");
+          message.remove();
+          loadQuestion1();
+        }, 2000);
       });
-    }
+    };
+  
+    // Question 2
+    const loadQuestion2 = () => {
+      const message = document.querySelector(".message");
+      message.remove();
+      const question2 = questions.q2;
+      const p = document.createElement("P");
+      p.classList.add("message", "animate-text");
+      p.innerHTML = `${question2}`;
+      addMessage.appendChild(p);
+  
+      object1.addEventListener("click", (e) => {
+        console.log("You clicked the wrong object!");
+        const message = document.querySelector(".message");
+        message.remove();
+        const p = document.createElement("P");
+        p.classList.add("message", "animate-text");
+        p.innerHTML = `${responses.res4}`;
+        addMessage.appendChild(p);
+        setTimeout(loadQuestion2, 2000);
+      });
+  
+      object2.addEventListener("click", (e) => {
+        console.log("You clicked Object 2!");
+        const message = document.querySelector(".message");
+        message.remove();
+        const p = document.createElement("P");
+        p.classList.add("message", "animate-text");
+        p.innerHTML = `${responses.res2}`;
+        addMessage.appendChild(p);
+        setTimeout(loadQuestion3, 5000);
+      });
+  
+      object3.addEventListener("click", (e) => {
+        console.log("You clicked the wrong object!");
+        const message = document.querySelector(".message");
+        message.remove();
+        const p = document.createElement("P");
+        p.classList.add("message", "animate-text");
+        p.innerHTML = `${responses.res4}`;
+        addMessage.appendChild(p);
+        setTimeout(loadQuestion2, 2000);
+      });
+    };
+  
+    loadQuestion1();
   };
   
   makeObjectsClickable();

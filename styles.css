@@ -15,12 +15,23 @@ body {
 .object-triangle {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   background: #7b1fa2;
-  width: 6em;
-  height: 6rem;
+  width: 5em;
+  height: 5rem;
   cursor: pointer;
   position: absolute;
   top: 50px;
   left: 300px;
+}
+.object-triangle:hover::after {
+  content: "";
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: #ba68c8;
+  width: 7rem;
+  height: 7rem;
+  display: block;
+  position: relative;
+  top: -2rem;
+  left: -2rem;
 }
 .object-square {
   clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
@@ -32,6 +43,9 @@ body {
   top: 250px;
   left: 100px;
 }
+.object-square:hover {
+  box-shadow: inset 0px 0px 0px 15px #2196f3;
+}
 .object-circle {
   background: #f4511e;
   width: 6rem;
@@ -42,9 +56,36 @@ body {
   top: 300px;
   left: 500px;
 }
+.object-circle:hover {
+  box-shadow: inset 0px 0px 0px 15px #f57c00;
+}
 .message-div {
   font-size: 1.8rem;
   font-weight: 100;
   text-align: center;
   padding-top: 1rem;
+}
+.animate-text {
+  animation-name: fadeIn, slideDown;
+  animation-duration: 0.5s;
+}
+.hideElement {
+  display: none;
+}
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(-25px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
