@@ -1,4 +1,6 @@
-const makeObjectsClickable = () => {
+const loadModule = () => {
+  console.log('Module loaded!')
+
   const messageDiv = document.querySelector(".message-div");
   const object1 = document.querySelector("#o1");
   const object2 = document.querySelector("#o2");
@@ -19,7 +21,7 @@ const makeObjectsClickable = () => {
   const addMessage = (message) => {
     const p = document.createElement("P");
     p.classList.add("message", "animate-text");
-    p.innerHTML = `${message}`;
+    p.innerHTML = message;
     messageDiv.appendChild(p);
   };
 
@@ -117,11 +119,10 @@ const makeObjectsClickable = () => {
     object3.addEventListener("click", () => {
       selectRemoveMessage();
       addMessage(responses.res3);
-      // break;
     });
   };
 
   loadQuestion1();
 };
 
-makeObjectsClickable();
+loadModule();

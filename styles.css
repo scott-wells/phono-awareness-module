@@ -69,9 +69,6 @@ body {
   animation-name: fadeIn, slideDown;
   animation-duration: 0.5s;
 }
-.hideElement {
-  display: none;
-}
 /* Animation Keyframes */
 @keyframes fadeIn {
   from {
