@@ -62,15 +62,7 @@ const loadModule1 = () => {
 
     button.addEventListener("click", () => {
       objects.forEach((object) => {
-        object.removeEventListener('click', (e) => {
-          console.log(e.target.id);
-        if (object === object1) {
-          loadResponse(responses.res1);
-          nextButton();
-        } else {
-          loadResponse(responses.res4);
-        }
-        });
+        object.removeEventListener('click', clickEvent);
       });
       module.innerHTML = "";
       console.log('Loading Module 2');
@@ -78,25 +70,27 @@ const loadModule1 = () => {
     });
   };
   // ----------------------------------------------
-  const clickResponse = (e) => {
-    
+  const clickEvent = (object) => {
+    console.log(object.target.id);
+    const button = document.querySelector('.nextButton');
+    if(button !== null) {
+      button.remove();
+    }
+    if (object.target.id === 'o1') {
+      loadResponse(responses.res1);
+      nextButton();
+    } else {
+      loadResponse(responses.res4);
+    }
   };
 
-  // ----------------------------------------------
+
   // Load Question
   // ----------------------------------------------
   addMessage(questions.q1);
   // Listen for clicks on each object
   objects.forEach((object) => {
-    object.addEventListener('click', (e) => {
-      console.log(e.target.id);
-      if (object === object1) {
-        loadResponse(responses.res1);
-        nextButton();
-      } else {
-        loadResponse(responses.res4);
-      }
-    });
+    object.addEventListener('click', clickEvent);
   });
   // ----------------------------------------------
   // End
@@ -168,37 +162,35 @@ const loadModule2 = () => {
 
     button.addEventListener("click", () => {
       objects.forEach((object) => {
-        object.removeEventListener('click', (e) => {
-          console.log(e.target.id);
-        if (object === object2) {
-          loadResponse(responses.res2);
-          nextButton();
-        } else {
-          loadResponse(responses.res4);
-        }
-        });
+        object.removeEventListener('click', clickEvent);
       });
       module.innerHTML = "";
       console.log('Loading Module 3');
       loadModule3();
     });
   };
-
   // ----------------------------------------------
+  const clickEvent = (object) => {
+    console.log(object.target.id);
+    const button = document.querySelector('.nextButton');
+    if(button !== null) {
+      button.remove();
+    }
+    if (object.target.id === 'o2') {
+      loadResponse(responses.res2);
+      nextButton();
+    } else {
+      loadResponse(responses.res4);
+    }
+  };
+
+
   // Load Question
   // ----------------------------------------------
   addMessage(questions.q2);
   // Listen for clicks on each object
   objects.forEach((object) => {
-    object.addEventListener('click', (e) => {
-      console.log(e.target.id);
-      if (object === object2) {
-        loadResponse(responses.res2);
-        nextButton();
-      } else {
-        loadResponse(responses.res4);
-      }
-    });
+    object.addEventListener('click', clickEvent);
   });
   // ----------------------------------------------
   // End
@@ -261,22 +253,45 @@ const loadModule3 = () => {
     message.remove();
     addMessage(response);
   };
-
   // ----------------------------------------------
+  const restartButton = () => {
+    const messageDiv = document.querySelector('.message-div');
+    const button = document.createElement("BUTTON");
+    button.classList.add("restartButton");
+    button.innerHTML = "Start Over";
+    messageDiv.appendChild(button);
+
+    button.addEventListener("click", () => {
+      objects.forEach((object) => {
+        object.removeEventListener('click', clickEvent);
+      });
+      module.innerHTML = "";
+      console.log('Loading Module 1');
+      loadModule1();
+    });
+  };
+  // ----------------------------------------------
+  const clickEvent = (object) => {
+    console.log(object.target.id);
+    const button = document.querySelector('.restartButton');
+    if(button !== null) {
+      button.remove();
+    }
+    if (object.target.id === 'o3') {
+      loadResponse(responses.res3);
+      restartButton();
+    } else {
+      loadResponse(responses.res4);
+    }
+  };
+
+
   // Load Question
   // ----------------------------------------------
   addMessage(questions.q3);
   // Listen for clicks on each object
   objects.forEach((object) => {
-    object.addEventListener('click', (e) => {
-      console.log(e.target.id);
-      if (object === object3) {
-        addMessage(responses.res3);
-        loadResponse(responses.res5);
-      } else {
-        loadResponse(responses.res4);
-      }
-    });
+    object.addEventListener('click', clickEvent);
   });
   // ----------------------------------------------
   // End
