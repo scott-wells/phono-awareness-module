@@ -2,27 +2,30 @@
 // Module 1
 // ----------------------------------------------
 const loadModule1 = () => {
+
   // Global Data
   // ----------------------------------------------
   const scene = `
-    <div class="scene">
-      <div id="o1" class="object object-square"></div>
-      <div id="o2" class="object object-circle"></div>
-      <div id="o3" class="object object-triangle"></div>
-    </div>
-    <div class="message-div">
-      <!-- Message gets loaded here. -->
-    </div>
+  <div class="scene">
+    <div id="o1" class="object object-rug"></div>
+    <div id="o2" class="object object-pillow"></div>
+    <div id="o3" class="object object-lamp"></div>
+    <div class="object object-vase"></div>
+    <div class="object object-frame"></div>
+  </div>
+  <div class="message-div">
+    <!-- Message gets loaded here. -->
+  </div>
   `;
   const questions = {
     q1: `I spy something that rhymes with <em><strong>bug</strong></em>. Can you find it?`,
     q2: `I spy something that rhymes with <em><strong>willow</strong></em>. Can you spot anything?`,
-    q3: `I spy something that starts with an <em><strong>lll</strong></em> sound. Can you find one?`
+    q3: `I spy something that starts with an <em><strong>LLL</strong></em> sound. Can you find one?`
   };
   const responses = {
     res1: `Yes, <em><strong>rug</strong></em> rhymes with <em><strong>bug</strong></em>!`,
     res2: `Yes, <em><strong>pillow</strong></em> rhymes with <em><strong>willow</strong></em>!`,
-    res3: `Yes, lamp starts with an <em><strong>lll</strong></em> sound!`,
+    res3: `Yes, lamp starts with an <em><strong>LLL</strong></em> sound!`,
     res4: `Try again.`
   };
 
@@ -35,7 +38,6 @@ const loadModule1 = () => {
   // Define Variables
   // ----------------------------------------------
   const objects = document.querySelectorAll(".object");
-  const object1 = document.querySelector("#o1");
 
   // Define Functions
   // ----------------------------------------------
@@ -70,20 +72,19 @@ const loadModule1 = () => {
     });
   };
   // ----------------------------------------------
-  const clickEvent = (object) => {
-    console.log(object.target.id);
+  const clickEvent = (event) => {
+    console.log(event.target.id);
     const button = document.querySelector('.nextButton');
     if(button !== null) {
       button.remove();
     }
-    if (object.target.id === 'o1') {
+    if (event.target.id === 'o1') {
       loadResponse(responses.res1);
       nextButton();
     } else {
       loadResponse(responses.res4);
     }
   };
-
 
   // Load Question
   // ----------------------------------------------
@@ -92,6 +93,7 @@ const loadModule1 = () => {
   objects.forEach((object) => {
     object.addEventListener('click', clickEvent);
   });
+
   // ----------------------------------------------
   // End
   // ----------------------------------------------
@@ -102,27 +104,30 @@ const loadModule1 = () => {
 // Module 2
 // ----------------------------------------------
 const loadModule2 = () => {
+
   // Global Data
   // ----------------------------------------------
   const scene = `
-    <div class="scene">
-      <div id="o1" class="object object-square"></div>
-      <div id="o2" class="object object-circle"></div>
-      <div id="o3" class="object object-triangle"></div>
-    </div>
-    <div class="message-div">
-      <!-- Message gets loaded here. -->
-    </div>
+  <div class="scene">
+    <div id="o1" class="object object-rug"></div>
+    <div id="o2" class="object object-pillow"></div>
+    <div id="o3" class="object object-lamp"></div>
+    <div class="object object-vase"></div>
+    <div class="object object-frame"></div>
+  </div>
+  <div class="message-div">
+    <!-- Message gets loaded here. -->
+  </div>
   `;
   const questions = {
     q1: `I spy something that rhymes with <em><strong>bug</strong></em>. Can you find it?`,
     q2: `I spy something that rhymes with <em><strong>willow</strong></em>. Can you spot anything?`,
-    q3: `I spy something that starts with an <em><strong>lll</strong></em> sound. Can you find one?`
+    q3: `I spy something that starts with an <em><strong>LLL</strong></em> sound. Can you find one?`
   };
   const responses = {
     res1: `Yes, <em><strong>rug</strong></em> rhymes with <em><strong>bug</strong></em>!`,
     res2: `Yes, <em><strong>pillow</strong></em> rhymes with <em><strong>willow</strong></em>!`,
-    res3: `Yes, lamp starts with an <em><strong>lll</strong></em> sound!`,
+    res3: `Yes, lamp starts with an <em><strong>LLL</strong></em> sound!`,
     res4: `Try again.`
   };
 
@@ -135,7 +140,6 @@ const loadModule2 = () => {
   // Define Variables
   // ----------------------------------------------
   const objects = document.querySelectorAll(".object");
-  const object2 = document.querySelector("#o2");
 
   // Define Functions
   // ----------------------------------------------
@@ -170,20 +174,19 @@ const loadModule2 = () => {
     });
   };
   // ----------------------------------------------
-  const clickEvent = (object) => {
-    console.log(object.target.id);
+  const clickEvent = (event) => {
+    console.log(event.target.id);
     const button = document.querySelector('.nextButton');
     if(button !== null) {
       button.remove();
     }
-    if (object.target.id === 'o2') {
+    if (event.target.id === 'o2') {
       loadResponse(responses.res2);
       nextButton();
     } else {
       loadResponse(responses.res4);
     }
   };
-
 
   // Load Question
   // ----------------------------------------------
@@ -192,6 +195,7 @@ const loadModule2 = () => {
   objects.forEach((object) => {
     object.addEventListener('click', clickEvent);
   });
+
   // ----------------------------------------------
   // End
   // ----------------------------------------------
@@ -202,27 +206,30 @@ const loadModule2 = () => {
 // Module 3
 // ----------------------------------------------
 const loadModule3 = () => {
+
   // Global Data
   // ----------------------------------------------
   const scene = `
-    <div class="scene">
-      <div id="o1" class="object object-square"></div>
-      <div id="o2" class="object object-circle"></div>
-      <div id="o3" class="object object-triangle"></div>
-    </div>
-    <div class="message-div">
-      <!-- Message gets loaded here. -->
-    </div>
+  <div class="scene">
+    <div id="o1" class="object object-rug"></div>
+    <div id="o2" class="object object-pillow"></div>
+    <div id="o3" class="object object-lamp"></div>
+    <div class="object object-vase"></div>
+    <div class="object object-frame"></div>
+  </div>
+  <div class="message-div">
+    <!-- Message gets loaded here. -->
+  </div>
   `;
   const questions = {
     q1: `I spy something that rhymes with <em><strong>bug</strong></em>. Can you find it?`,
     q2: `I spy something that rhymes with <em><strong>willow</strong></em>. Can you spot anything?`,
-    q3: `I spy something that starts with an <em><strong>lll</strong></em> sound. Can you find one?`
+    q3: `I spy something that starts with an <em><strong>LLL</strong></em> sound. Can you find one?`
   };
   const responses = {
     res1: `Yes, <em><strong>rug</strong></em> rhymes with <em><strong>bug</strong></em>!`,
     res2: `Yes, <em><strong>pillow</strong></em> rhymes with <em><strong>willow</strong></em>!`,
-    res3: `Yes, lamp starts with an <em><strong>lll</strong></em> sound!`,
+    res3: `Yes, lamp starts with an <em><strong>LLL</strong></em> sound!`,
     res4: `Try again.`,
     res5: `<strong>You did it! Great job!</strong>`
   };
@@ -236,7 +243,6 @@ const loadModule3 = () => {
   // Define Variables
   // ----------------------------------------------
   const objects = document.querySelectorAll(".object");
-  const object3 = document.querySelector("#o3");
 
   // Define Functions
   // ----------------------------------------------
@@ -271,20 +277,19 @@ const loadModule3 = () => {
     });
   };
   // ----------------------------------------------
-  const clickEvent = (object) => {
-    console.log(object.target.id);
+  const clickEvent = (event) => {
+    console.log(event.target.id);
     const button = document.querySelector('.restartButton');
     if(button !== null) {
       button.remove();
     }
-    if (object.target.id === 'o3') {
+    if (event.target.id === 'o3') {
       loadResponse(responses.res3);
       restartButton();
     } else {
       loadResponse(responses.res4);
     }
   };
-
 
   // Load Question
   // ----------------------------------------------
@@ -293,6 +298,7 @@ const loadModule3 = () => {
   objects.forEach((object) => {
     object.addEventListener('click', clickEvent);
   });
+
   // ----------------------------------------------
   // End
   // ----------------------------------------------
